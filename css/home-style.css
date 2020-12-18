@@ -1,0 +1,247 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+.nui {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Nucleo Outline';
+    font-size: inherit;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.nui.ui-1_check:before { content: "\ea22"; }.nui.ui-1_email-85:before { content: "\ea2a"; }.nui.arrows-1_cloud-download-93:before { content: "\ea21"; }.nui.arrows-1_cloud-upload-94:before { content: "\ea24"; }.nui.arrows-1_minimal-down:before { content: "\ea39"; }.nui.arrows-1_minimal-left:before { content: "\ea3a"; }.nui.arrows-1_minimal-right:before { content: "\ea3b"; }.nui.arrows-1_minimal-up:before { content: "\ea3c"; }.nui.arrows-1_refresh-69:before { content: "\ea44"; }.nui.arrows-1_share-66:before { content: "\ea4c"; }.nui.business_badge:before { content: "\ea09"; }.nui.business_bank:before { content: "\ea0a"; }.nui.business_briefcase-24:before { content: "\ea13"; }.nui.business_bulb-63:before { content: "\ea15"; }.nui.business_chart-bar-32:before { content: "\ea1e"; }.nui.business_chart-pie-36:before { content: "\ea1f"; }.nui.business_globe:before { content: "\ea2f"; }.nui.business_money-coins:before { content: "\ea40"; }.nui.clothes_tie-bow:before { content: "\ea5b"; }.nui.design_vector:before { content: "\ea61"; }.nui.design_app:before { content: "\ea08"; }.nui.design_bullet-list-67:before { content: "\ea14"; }.nui.design_image:before { content: "\ea33"; }.nui.design_palette:before { content: "\ea41"; }.nui.design_scissors:before { content: "\ea4a"; }.nui.design-2_html5:before { content: "\ea32"; }.nui.design-2_ruler-pencil:before { content: "\ea48"; }.nui.emoticons_satisfied:before { content: "\ea49"; }.nui.files_box:before { content: "\ea12"; }.nui.files_paper:before { content: "\ea43"; }.nui.files_single-copy-04:before { content: "\ea52"; }.nui.health_ambulance:before { content: "\ea07"; }.nui.loader_gear:before { content: "\ea4e"; }.nui.loader_refresh:before { content: "\ea44"; }.nui.location_bookmark:before { content: "\ea10"; }.nui.location_compass-05:before { content: "\ea25"; }.nui.location_map-big:before { content: "\ea3d"; }.nui.location_pin:before { content: "\ea47"; }.nui.location_world:before { content: "\ea63"; }.nui.media-1_album:before { content: "\ea02"; }.nui.media-1_button-pause:before { content: "\ea16"; }.nui.media-1_button-play:before { content: "\ea18"; }.nui.media-1_button-power:before { content: "\ea19"; }.nui.media-1_camera-compact:before { content: "\ea1c"; }.nui.media-2_note-03:before { content: "\ea3f"; }.nui.media-2_sound-wave:before { content: "\ea57"; }.nui.objects_diamond:before { content: "\ea29"; }.nui.objects_globe:before { content: "\ea2f"; }.nui.objects_key-25:before { content: "\ea38"; }.nui.objects_planet:before { content: "\ea46"; }.nui.objects_spaceship:before { content: "\ea55"; }.nui.objects_support-17:before { content: "\ea56"; }.nui.objects_umbrella-13:before { content: "\ea5f"; }.nui.education_agenda-bookmark:before { content: "\ea01"; }.nui.education_atom:before { content: "\ea0c"; }.nui.education_glasses:before { content: "\ea2d"; }.nui.education_hat:before { content: "\ea30"; }.nui.education_paper:before { content: "\ea42"; }.nui.shopping_bag-16:before { content: "\ea0d"; }.nui.shopping_basket:before { content: "\ea0b"; }.nui.shopping_box:before { content: "\ea11"; }.nui.shopping_cart-simple:before { content: "\ea1d"; }.nui.shopping_credit-card:before { content: "\ea28"; }.nui.shopping_delivery-fast:before { content: "\ea27"; }.nui.shopping_shop:before { content: "\ea50"; }.nui.shopping_tag-content:before { content: "\ea59"; }.nui.sport_trophy:before { content: "\ea5d"; }.nui.sport_user-run:before { content: "\ea60"; }.nui.tech_controller-modern:before { content: "\ea26"; }.nui.tech_headphones:before { content: "\ea31"; }.nui.tech_laptop:before { content: "\ea36"; }.nui.tech_mobile:before { content: "\ea3e"; }.nui.tech_tablet:before { content: "\ea58"; }.nui.tech_tv:before { content: "\ea5e"; }.nui.tech_watch-time:before { content: "\ea62"; }.nui.text_align-center:before { content: "\ea05"; }.nui.text_align-left:before { content: "\ea06"; }.nui.text_bold:before { content: "\ea0e"; }.nui.text_caps-small:before { content: "\ea1b"; }.nui.gestures_tap-01:before { content: "\ea5a"; }.nui.transportation_air-baloon:before { content: "\ea03"; }.nui.transportation_bus-front-12:before { content: "\ea17"; }.nui.travel_info:before { content: "\ea04"; }.nui.travel_istanbul:before { content: "\ea34"; }.nui.ui-1_bell-53:before { content: "\ea0f"; }.nui.ui-1_calendar-60:before { content: "\ea1a"; }.nui.ui-1_lock-circle-open:before { content: "\ea35"; }.nui.ui-1_send:before { content: "\ea4d"; }.nui.ui-1_settings-gear-63:before { content: "\ea4e"; }.nui.ui-1_simple-add:before { content: "\ea4f"; }.nui.ui-1_simple-delete:before { content: "\ea54"; }.nui.ui-1_simple-remove:before { content: "\ea53"; }.nui.ui-1_zoom-bold:before { content: "\ea64"; }.nui.ui-2_chat-round:before { content: "\ea20"; }.nui.ui-2_favourite-28:before { content: "\ea2b"; }.nui.ui-2_like:before { content: "\ea37"; }.nui.ui-2_settings-90:before { content: "\ea4b"; }.nui.ui-2_time-alarm:before { content: "\ea5c"; }.nui.users_circle-08:before { content: "\ea23"; }.nui.users_single-02:before { ent: "\ea51"; } 
+
+body {
+	font-family: 'OpenSansCondLight';
+	font-size: 25px;
+	color: #FFF;
+	background: #242E3A;
+}
+
+.bigicon {font-size: 3em;margin: 20px 0;}
+h2{font-size: 42px;}
+h3{font-size: 28px;}
+h4{font-size: 18px; line-height: 1.4em;}
+
+p{
+    letter-spacing: 1px;
+    color: #c3c3c3;
+    font-weight: lighter;
+}
+
+ul{padding: 0;}
+a{color: #ea9312}
+a:hover{color: #c3c3c3; text-decoration: none;}
+
+#services{text-align: center;}
+.col-md-4, .col-md-6{padding-bottom: 50px;}
+.col-md-3 {padding: 0;}
+
+.sectionhead{
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+hr.separetor{
+    width: 80px;
+	margin: 50px auto;
+    color: #363942;
+    border-top: 2px solid #ea9312;
+}
+
+.clearfix {
+	clear: both;
+}
+
+/******************* PAGE START *******************/
+
+.loader {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	text-align: center;
+	background: #363C48;
+	z-index: 100000;
+}
+
+.loader i {
+	font-size: 150px;
+	text-align: center;
+	line-height: 100vh;
+	color: #FFF;
+	animation-duration: 3s;
+}
+
+/********************* HEADER *********************/
+
+.nav {
+	height: 70px;
+	padding: 0 2%;
+	background: #363C48;
+}
+
+.nav .logo {
+	float: left;
+}
+
+.nav .logo i {
+	font-size: 40px;
+	color: #FFF;
+	line-height: 70px;
+	display: inline-block;
+	transition: all .3s;
+}
+
+.nav .logo i:hover,
+.nav .menu a:hover {
+	color: #AAA;
+}
+
+.nav .menu {
+	float: right;
+}
+
+.nav .menu a {
+	font-family: "RobotoCondensedLight";
+	color: #FFF;
+	font-size: 20px;
+	line-height: 70px;
+	font-weight: 700;
+	transition: all .3s;
+	display: inline-block;
+	margin: 0 3px;
+}
+
+/********************** HERO **********************/
+
+.hero {
+	width: 100%;
+	height: calc(100vh - 70px);
+	background: url(../img/bg.jpg) 50% 50%;
+	background-size: cover;
+	color: #FFF;
+	display: inline-block;
+}
+
+.content {
+	width: 50%;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+
+.hero .content h1 {
+	font-family: 'KaufmannBT';
+	font-size: 100px;
+	line-height: calc(100vh - 100px - 70px);
+}
+
+.demo-image {
+	width: 50%;
+	float: left;
+	overflow: hidden;
+	height: 100%;
+}
+
+.hero .demo-image img {
+	margin-top: -10px;
+}
+
+/******************* SERVICES *******************/
+
+#services{
+	text-align: center;
+}
+
+#portfolio{
+    background: #363C48;
+    padding: 0 0 30px 0;
+    text-align: center;
+}
+
+#shotsByPlayerId li{
+	text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#shotsByPlayerId li:hover{
+    box-shadow: 1px 2px 25px rgba(160, 160, 160, 0.4);
+}
+
+#shotsByPlayerId img {
+	width: 100px;
+    border-radius: 5px;
+}
+
+#shotsByPlayerId img:hover{
+    opacity: .5;
+    overflow: hidden;
+}
+
+#shotsByPlayerId a:hover{color: #ea9312;}
+
+#shotsByPlayerId h3 a{color: #363942;}
+
+.btn-default{
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    margin: 50px 0;
+    color: #c3c3c3;
+    letter-spacing: 2px;
+}
+
+.btn-default:hover{
+    background: none;
+    color: #ea9312;
+}
+
+/******************* RESPONSIVE *******************/
+
+@media only screen and (max-width: 900px) {
+	body {
+		font-size: 20px;
+	}
+	.hero {
+		/*min-height: 80vh;*/
+		height: 100%;
+		padding: 10% 1%;
+	}
+	.emmet .demo-image {
+		display: none;
+	}
+	.hero .demo-image,
+	.hero .demo-image img,
+	.proptabsy .thumb,
+	.hero .content {
+		width: 100%;
+	}
+	.hero .content h1 {
+		font-size: 50px;
+		line-height: 200px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.nav {
+		padding: 0;
+	}
+}
+
+/*@media only screen and (max-width: 800px) {
+	#shotsByPlayerId li{
+		width: 100%;
+	}
+}*/

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Saturn</title>
+  <link rel="icon" href="img/ico.png">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="CodeMirror/lib/codemirror.css">
+  <link rel="stylesheet" href="CodeMirror/addon/hint/show-hint.css">
+  <link rel="stylesheet" href="CodeMirror/addon/dialog/dialog.css">
+  <link rel="stylesheet" href="CodeMirror/addon/search/matchesonscrollbar.css">
+  <link rel="stylesheet" href="CodeMirror/theme/base16-dark.css">
+  <link rel="stylesheet" href="CodeMirror/addon/fold/foldgutter.css">
+  <link rel="stylesheet" href="CodeMirror/addon/scroll/simplescrollbars.css">
+  <link rel="stylesheet" href="index4_files/css/animate.css">
+  <link rel="stylesheet" href="CodeMirror/addon/lint/lint.css">
+  <link rel="stylesheet" href="CodeMirror/addon/tern/tern.css">
+</head>
+
+<body>
+	<div class="loader animated">
+	  <i class="animated infinite flash nui objects_planet"></i>
+	</div>
+  <header class="top">
+    <div class="logo">
+      <a href="home-page.html"><img src="img/ico.png" alt="">
+      </a>
+    </div>
+    <div class="menu">
+      <button class="fa fa-columns" data-toggle="modal" data-target="#myModal" data-animation="true" data-delay="0"></button>
+    </div>
+  </header>
+  <div class="left-sidebar">
+    <div class="widgets widget-1 fa fa-terminal" title="Console" data-toggle="tooltip" data-placement="right" data-container="body" data-animation="true" data-delay="0"></div>
+    <div class="widgets widget-2 fa fa-calculator" title="Calculator" data-toggle="tooltip" data-placement="right" data-container="body" data-animation="true" data-delay="0"></div>
+    <div class="widgets active widget-3 fa fa-globe" title="Output" data-toggle="tooltip" data-placement="right" data-container="body" data-animation="true" data-delay="0"></div>
+    <div class="widget-active widget-active-1">
+      <div id="sandbox">
+        <pre class="output"></pre>
+        <div class="console">
+          <textarea rows="1" placeholder="// type some javascript and hit enter (:help for info)"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="widget-active widget-active-2">
+      <div class="calc">
+        <div class="drag-line">=</div>
+        <input type="text" id="calc-input">
+        <div class="rows">
+          <div class="numbers">
+            <div class="num row">1</div>
+            <div class="num row">2</div>
+            <div class="num row">3</div>
+            <div class="num row">4</div>
+            <div class="num row">5</div>
+            <div class="num row">6</div>
+            <div class="num row">7</div>
+            <div class="num row">8</div>
+            <div class="num row">9</div>
+            <div class="num row">0</div>
+            <div class="num row">&#8226;</div>
+            <div class="num row">&plusmn;</div>
+          </div>
+          <div class="actions">
+            <div class="action row">DEL</div>
+            <div class="action row">&divide;</div>
+            <div class="action row">x</div>
+            <div class="action row">+</div>
+            <div class="action row">-</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="output" id="web">
+    <div class="config-output">
+      <div class="tab"><span class="icon"></span> <span class="text"></span>
+      </div>
+    </div>
+    <iframe id="preview"></iframe>
+  </div>
+  <div class="input">
+    <div class="files-editor">
+      <button title="HTML" data-toggle="tooltip" data-placement="bottom" data-container="body" data-animation="true" data-delay="0" class="tab tab-active html"><span class="description">HTML</span> <span class="fa fa-html5 type"></span>
+      </button>
+      <button title="CSS" data-toggle="tooltip" data-placement="bottom" data-container="body" data-animation="true" data-delay="0" class="tab css"><span class="description">CSS</span> <span class="fa fa-css3 type"></span>
+      </button>
+      <button title="JavaScript" data-toggle="tooltip" data-placement="bottom" data-container="body" data-animation="true" data-delay="0" class="tab js"><span class="description">JavaScript</span> <span class="type">JS</span>
+      </button>
+    </div>
+    <textarea id="html-code" name="html-code">&lt;!DOCTYPE html>
+&lt;html>
+
+&lt;head>
+  &lt;meta charset="utf-8">
+  &lt;link rel="icon" href="img/ico.png">
+  &lt;title>Hello!&lt;/title>
+&lt;/head>
+
+&lt;body>
+
+&lt;/body>
+
+&lt;/html>
+</textarea>
+    <textarea id="css-code" name="css-code">* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+#der {
+  color: #FFF;
+  text-align: center;
+  background: linear-gradient(45deg, #1ded7e, #9ded7e);
+  font-family: OCR-A BT;
+  text-transform: uppercase;
+  line-height: 200px;
+}
+</textarea>
+    <textarea id="js-code" name="js-code"></textarea>
+    <div class="editor-settings">
+      <span class="word-wrap" title="Word Wrap" data-toggle="tooltip" data-placement="top" data-container="body" data-animation="true" data-delay="0"><span class="fa fa-circle"></span></span>
+      <span class="cursor-place">Line: <span class="line">1</span> Column: <span class="ch">1</span></span>
+      <span class="indent-size" title="Tab Size" data-toggle="tooltip" data-placement="top" data-container="body" data-animation="true" data-delay="0"><input class="size-value" value="2" min="1" max="4" type="number"></input></span>
+    </div>
+  </div>
+  <div class="right-sidebar">
+    <div class="menu">
+      <div class="widget editor-widget fa fa-gear" title="Settings" data-toggle="tooltip" data-placement="left" data-container="body" data-animation="true" data-delay="0"></div>
+      <div class="widget editor-widget fa fa-edit" title="Edit Code" data-toggle="tooltip" data-placement="left" data-container="body" data-animation="true" data-delay="0"></div>
+      <div class="widget editor-widget fa fa-save" title="Save Code" data-toggle="tooltip" data-placement="left" data-container="body" data-animation="true" data-delay="0"></div>
+      <div class="widget editor-widget fa fa-refresh" title="Refresh Code" data-toggle="tooltip" data-placement="left" data-container="body" data-animation="true" data-delay="0"></div>
+      <div class="widget fa fa-bug" title="Report a Bug" data-toggle="tooltip" data-placement="left" data-container="body" data-animation="true" data-delay="0"></div>
+      <div class="widget fa fa-book" title="Manual" data-toggle="tooltip" data-placement="left" data-container="body" data-animation="true" data-delay="0"></div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h4 class="title title-up">Screen Layout</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default">Nice Button</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/now-ui-kit.js"></script>
+  <script src="js/jquery.nicescroll.min.js"></script>
+  <script src="js/codemirror.min.js"></script>
+  <script src="CodeMirror/addon/tern/tern.js"></script>
+	<script src="CodeMirror/addon/tern/node_modules/acorn/dist/acorn.js"></script>
+	<script src="CodeMirror/addon/tern/node_modules/acorn/dist/acorn_loose.js"></script>
+	<script src="CodeMirror/addon/tern/node_modules/acorn/dist/walk.js"></script>
+	<script src="CodeMirror/addon/tern/lib/signal.js"></script>
+	<script src="CodeMirror/addon/tern/lib/tern.js"></script>
+	<script src="CodeMirror/addon/tern/lib/def.js"></script>
+	<script src="CodeMirror/addon/tern/lib/comment.js"></script>
+	<script src="CodeMirror/addon/tern/lib/infer.js"></script>
+	<script src="CodeMirror/addon/tern/plugin/doc_comment.js"></script>
+  <script src="CodeMirror/addon/lint/jshint.js"></script>
+  <script src="CodeMirror/addon/lint/csslint.js"></script>
+  <script src="CodeMirror/addon/lint/htmlhint.js"></script>
+  <script src="CodeMirror/addon/lint/lint.js"></script>
+  <script src="CodeMirror/addon/lint/javascript-lint.js"></script>
+  <script src="CodeMirror/addon/lint/css-lint.js"></script>
+  <script src="CodeMirror/addon/lint/html-lint.js"></script>
+  <script src="CodeMirror/addon/emmet/node_modules/emmet/node_modules/requirejs/require.js"></script>
+  <script>
+    var main = 1;
+
+    function completeAfter(cm, pred) {
+      var cur = cm.getCursor();
+      if (!pred || pred()) setTimeout(function () {
+        if (!cm.state.completionActive)
+          cm.showHint({
+            completeSingle: false
+          });
+      }, 100);
+      return CodeMirror.Pass;
+    }
+
+    function minify(editor) {
+
+    }
+    var htmlEditor = CodeMirror.fromTextArea(document.getElementById("html-code"), {
+      mode: "text/html",
+      lint: true,
+      styleActiveLine: true,
+      lineNumbers: true,
+      lineWrapping: true,
+      autoCloseTags: true,
+      gutters: ["CodeMirror-lint-markers", "CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+      extraKeys: {
+        "Ctrl-F": function (cm) {
+          cm.foldCode(cm.getCursor());
+        },
+        "'<'": completeAfter,
+        "Ctrl-Space": "autocomplete",
+        "Alt-F": "findPersistent",
+        "Ctrl-J": "toMatchingTag"
+      },
+      value: document.documentElement.innerHTML,
+      matchTags: {
+        bothTags: true
+      },
+      foldGutter: true,
+      scrollbarStyle: "simple",
+      tabSize: 2,
+      showCursorWhenSelecting: true,
+    });
+
+    // htmlEditor.setValue('');
+
+    requirejs.config({
+      baseUrl: './',
+      paths: {
+        emmet: 'codemirror/addon/emmet/node_modules/emmet/lib',
+        lodash: 'codemirror/addon/emmet/node_modules/emmet/node_modules/lodash/lodash'
+      }
+    });
+
+    requirejs(['codemirror/addon/emmet/plugin', 'emmet/emmet'], function (plugin, emmet) {
+      var loadJSON = function (url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, false);
+        xhr.send(null);
+        return JSON.parse(xhr.responseText);
+      };
+
+      emmet.loadUserData({
+        snippets: loadJSON('codemirror/addon/emmet/node_modules/emmet/lib/snippets.json'),
+        caniuse: loadJSON('codemirror/addon/emmet/node_modules/emmet/lib/caniuse.json')
+      });
+    });
+
+    var cssEditor = CodeMirror.fromTextArea(document.getElementById("css-code"), {
+      mode: "text/css",
+      styleActiveLine: true,
+      lineNumbers: true,
+      lineWrapping: true,
+      autoCloseBrackets: true,
+      gutters: ["CodeMirror-lint-markers", "CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+      extraKeys: {
+        "Ctrl-F": function (cm) {
+          cm.foldCode(cm.getCursor());
+        },
+        "';'": completeAfter,
+        "Ctrl-Space": "autocomplete",
+        "Alt-F": "findPersistent",
+        "Ctrl-J": "toMatchingTag"
+      },
+      value: document.documentElement.innerHTML,
+      matchBrackets: true,
+      foldGutter: true,
+      scrollbarStyle: "simple",
+      lint: true
+    });
+
+    function getURL(url, c) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("get", url, true);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState != 4) return;
+      if (xhr.status < 400) return c(null, xhr.responseText);
+      var e = new Error(xhr.responseText || "No response");
+      e.status = xhr.status;
+      c(e);
+    };
+  }
+
+  var server;
+  getURL("CodeMirror/addon/tern/defs/ecmascript.json", function(err, code) {
+    if (err) throw new Error("Request for ecmascript.json: " + err);
+    server = new CodeMirror.TernServer({defs: []});
+    jsEditor.setOption("extraKeys", {
+      "Ctrl-Space": function(cm) { server.complete(cm); },
+      "Ctrl-I": function(cm) { server.showType(cm); },
+      "Ctrl-O": function(cm) { server.showDocs(cm); },
+      "Alt-.": function(cm) { server.jumpToDef(cm); },
+      "Alt-,": function(cm) { server.jumpBack(cm); },
+      "Ctrl-Q": function(cm) { server.rename(cm); },
+      "Ctrl-.": function(cm) { server.selectName(cm); }
+    })
+    jsEditor.on("cursorActivity", function(cm) { server.updateArgHints(cm); });
+  });
+
+    var jsEditor = CodeMirror.fromTextArea(document.getElementById("js-code"), {
+      mode: "text/javascript",
+      styleActiveLine: true,
+      lineNumbers: true,
+      lineWrapping: true,
+      autoCloseBrackets: true,
+      gutters: ["CodeMirror-lint-markers", "CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+      extraKeys: {
+        "'\n'": completeAfter,
+        "Ctrl-Space": "autocomplete",
+        "Alt-F": "findPersistent",
+        "Ctrl-J": "toMatchingTag"
+      },
+      value: document.documentElement.innerHTML,
+      matchBrackets: true,
+      foldGutter: true,
+      scrollbarStyle: "simple",
+      lint: true,
+    });
+
+    htmlEditor.setOption("theme", "base16-dark");
+    cssEditor.setOption("theme", "base16-dark");
+    jsEditor.setOption("theme", "base16-dark");
+
+    var delay;
+    htmlEditor.on("change", function () {
+      clearTimeout(delay);
+      delay = setTimeout(updatePreview, 2000);
+    });
+
+    cssEditor.on("change", function () {
+      clearTimeout(delay);
+      delay = setTimeout(updatePreview, 2000);
+    });
+
+    // jsEditor.on("change", function() {
+    // 	clearTimeout(delay);
+    // 	delay = setTimeout(updatePreview, 2000);
+    // });
+
+    var titleOut = $('.config-output .tab .text')[0],
+      iconOut = $('.config-output .tab .icon')[0];
+
+    function updatePreview() {
+      var previewFrame = document.getElementById('preview');
+      var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+      preview.open();
+      var value = '<style>' + cssEditor.getValue() + '</style>' + htmlEditor.getValue() + '<script>' + jsEditor.getValue() + '<' + '/script>';
+      preview.write(value);
+      preview.close();
+      var title = String(htmlEditor.getValue()
+          .replace(/\n/gi, " ")
+          .match(/<title>\s?.{1,}?\s?<\/title>/gi))
+        .replace(/<title>/gi, "")
+        .replace(/<\/title>/gi, "")
+        .replace(/</gi, "&lt;")
+        .replace(/</gi, "&gt;")
+        .replace(/\n/gi, "");
+
+      var icon = String(htmlEditor.getValue()
+          .replace(/\n/gi, "")
+          .replace(/\"/gi, "")
+          .replace(/\'/gi, "")
+          .replace(/\s/gi, "")
+          .match(/<link(rel=iconhref=.{1,}?>|href=.{1,}?rel=icon)/gi))
+        .replace(/<link/gi, "")
+        .replace(/rel=icon/gi, "")
+        .replace(/href=/gi, "")
+        .replace(/>/gi, "");
+      if (title != null) {
+        titleOut.innerHTML = title;
+      }
+      if (title == "null") {
+        titleOut.innerHTML = "localhost";
+      }
+      if (icon != null) {
+        iconOut.innerHTML = "<img src='" + icon + "'>";
+      }
+      if (icon == "null") {
+        iconOut.innerHTML = '';
+      }
+    }
+    setTimeout(updatePreview, 300);
+    // preview.location.href = 'http://codium.com';
+
+  </script>
+
+  <!-- The sandbox template: -->
+  <script type="text/template" id="tplSandbox">
+    <pre class="output"></pre>
+    <div class="console">
+      <textarea rows="1" placeholder="<%= placeholder %>"></textarea>
+    </div>
+  </script>
+
+  <!-- The command/result template (NB whitespace/line breaks matter inside <pre> tag): -->
+  <script type="text/template" id="tplCommand">
+    <% if (! _hidden) { %><span class="command"><%= command %></span>
+      <span class="prefix"><%= this.resultPrefix %></span><span class="<%= _class %>"><%= result %></span>
+      <% } %>
+  </script>
+  <script src="javascript%20sandbox%20console%20demo_files/underscore.js"></script>
+  <script src="javascript%20sandbox%20console%20demo_files/backbone.js"></script>
+  <script src="javascript%20sandbox%20console%20demo_files/backbone-localStorage.js"></script>
+
+  <!-- Some extras for the demo: -->
+  <script src="javascript%20sandbox%20console%20demo_files/lettering.js"></script>
+  <script src="javascript%20sandbox%20console%20demo_files/prettify.js"></script>
+
+  <!-- The JS Sandbox Console script (requires underscore, backbone and jquery): -->
+  <script src="javascript%20sandbox%20console%20demo_files/sandbox-console.js"></script>
+  <!-- When ready, create the model and view -->
+  <script>
+    window.sandbox = new Sandbox.View({
+      el: $('#sandbox'),
+      model: new Sandbox.Model()
+    });
+
+    // Lettering.js:
+    $('h1')
+      .add('h2')
+      .add('h3')
+      .lettering();
+
+    // prettify code blocks:
+    prettyPrint();
+
+    $('#sandbox pre.output')
+      .niceScroll({
+        mousescrollstep: 20,
+        cursorcolor: "#00CCCC",
+        cursorwidth: "10px",
+        cursorborderradius: "15px",
+        cursorborder: "none",
+        cursoropacitymin: 1,
+        background: "#161A26"
+      });
+
+  </script>
+  <script src="js/main.js"></script>
+  <script>
+    $('.loader')
+      .addClass('slideOutUp');
+
+  </script>
+</body>
+
+</html>
